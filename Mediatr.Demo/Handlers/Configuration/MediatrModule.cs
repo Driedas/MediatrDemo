@@ -1,19 +1,15 @@
 ﻿using Autofac;
 using FluentValidation;
 using Handlers.Behaviors;
-using Handlers.Commands.Student;
 using MediatR;
 using MediatR.Pipeline;
-using Messages.Commands.Student;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Handlers.Configuration
 {
-	public static class MediatrExtensions
+	public class MediatrModule
+		: Module
 	{
-		public static void AddMediatr(this ContainerBuilder builder)
+		protected override void Load(ContainerBuilder builder)
 		{
 			builder.RegisterType<Mediator>()
 				.As<IMediator>()
@@ -39,7 +35,7 @@ namespace Handlers.Configuration
 			builder.RegisterGeneric(typeof(ValidationBehavior<,>)).As(typeof(IPipelineBehavior<,>));
 			builder.RegisterGeneric(typeof(TransactionBehavior<,>)).As(typeof(IPipelineBehavior<,>));
 
-			builder.RegisterAssemblyTypes(typeof(RegisterStudentValidator).Assembly)
+			builder.RegisterAssemblyTypes(typeof(Messages.Root).Assembly)
 				.AsClosedTypesOf(typeof(IValidator<>));
 		}
 	}

@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using Messages.Commands.Student;
+using Messages.Commands.Students;
 using System.Threading;
 using System.Threading.Tasks;
 

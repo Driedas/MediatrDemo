@@ -13,6 +13,7 @@ namespace Handlers.Behaviors
 		{
 
 		}
+
 		public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
 		{
 			Stopwatch stopwatch = new Stopwatch();
