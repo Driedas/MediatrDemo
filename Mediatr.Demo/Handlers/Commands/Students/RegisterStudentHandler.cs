@@ -1,17 +1,18 @@
 ﻿using MediatR;
+using MediatrDemo.Domain;
 using Messages.Commands.Students;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Handlers.Commands.Student
+namespace Handlers.Commands.Students
 {
 	public class RegisterStudentHandler
-		: IRequestHandler<RegisterStudent, MediatrDemo.Domain.Student>
+		: IRequestHandler<RegisterStudent, Student>
 	{
-		public Task<MediatrDemo.Domain.Student> Handle(RegisterStudent request, CancellationToken cancellationToken)
+		public Task<Student> Handle(RegisterStudent request, CancellationToken cancellationToken)
 		{
 			return Task.FromResult(
-				new MediatrDemo.Domain.Student(
+				new Student(
 					request.Id,
 					request.FirstName,
 					request.MiddleName,

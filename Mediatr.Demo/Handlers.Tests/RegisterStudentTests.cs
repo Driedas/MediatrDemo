@@ -15,6 +15,22 @@ namespace Handlers.Tests
 {
 	public class RegisterStudentTests
 	{
+		//[Fact]
+		//public async Task MediatorShouldExecuteAllPipelineBehaviors()
+		//{
+		//	IMediator mediator = GetMediator(builder =>
+		//	{
+		//		new Mock( typeof(LoggingBehavior<,>));
+
+		//		builder.RegisterGeneric(typeof(LoggingBehavior<,>)).As(typeof(IPipelineBehavior<,>));
+		//		builder.RegisterGeneric(typeof(AuthorizationBehavior<,>)).As(typeof(IPipelineBehavior<,>));
+		//		builder.RegisterGeneric(typeof(ValidationBehavior<,>)).As(typeof(IPipelineBehavior<,>));
+		//		builder.RegisterGeneric(typeof(TransactionBehavior<,>)).As(typeof(IPipelineBehavior<,>));
+		//	});
+
+		//	await mediator.Send(GetValidCommand());
+		//}
+
 		[Fact]
 		public async Task ShouldFailOnInvalidCommand()
 		{

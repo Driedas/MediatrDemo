@@ -1,6 +1,6 @@
 ﻿namespace Handlers
 {
-	internal class Root
+	public class Root
 	{
 	}
 }
